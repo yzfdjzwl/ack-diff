@@ -1,3 +1,9 @@
+import {
+    isElement,
+    isArray,
+    setAttrs,
+} from './util'
+
 class Element {
     constructor(type, props, children) {
         this.type = type;
@@ -24,24 +30,6 @@ class Element {
 
 function createElement(type, props, children) {
     return new Element(type, props, children);
-}
-
-function isElement(el) {
-    return el instanceof Element;
-}
-
-function isString(type) {
-    return typeof type === 'string';
-}
-
-function isArray(children) {
-    return Array.isArray(children);
-}
-
-function setAttrs(props, node) {
-    for (let key in props) {
-        node.setAttribute(key, props[key]);
-    }
 }
 
 function render(virtualDOM) {

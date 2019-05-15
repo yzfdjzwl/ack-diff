@@ -1,7 +1,10 @@
-const REMOVE = 'REMOVE';
-const TEXT = 'TEXT';
-const ATTRS = 'ATTRS';
-const REPLACE = 'REPLACE';
+import {
+    REMOVE,
+    TEXT,
+    ATTRS,
+    REPLACE,
+    isString,
+} from './util'
 
 
 /**
@@ -9,11 +12,6 @@ const REPLACE = 'REPLACE';
  *
  *
  */
-
-function isString(str) {
-    return typeof str === 'string';
-}
-
 function diff(oldTree, newTree) {
     let index = 0;
     const patches = {};
@@ -59,7 +57,7 @@ function diffChildren(oldChildren, newChildren, index, patches) {
      *    2* 3*  5* 6*
      * 
      * 当遍历1结束后，要遍历到4时，此时的index = currentNodeIndex(1) + 1的count(2) + 1 = 4;
-     * 统计count，是为了处理子节点被REPLACE后
+     * 统计count，是为了处理子节点被REPLACE后(子节点下有更多子节点), 往后遍历时，index已经不正确了，因此需要一个count来计数
      * 
      */
     oldChildren.forEach((child, index) => {

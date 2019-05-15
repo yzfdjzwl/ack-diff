@@ -21,7 +21,6 @@ const v1 = el( 'div', { 'data-id': 1, 'style': 'corlor: red;' }, [
     ]),
     el('input', { 'value': 'fuck'}, []),
 ]);
-console.log(v1);
 
 const v2 = el( 'div', { 'data-id': 1, 'style': 'corlor: red;' }, [
     el('div', { 'style': 'color: red;' }, [
@@ -31,8 +30,13 @@ const v2 = el( 'div', { 'data-id': 1, 'style': 'corlor: red;' }, [
     el('div', { 'style': 'color: red;' }, ['div1，v2']),
     el('div', { 'style': 'color: red;' }, ['么么哒']),
     el('p', { 'style': 'color: red;' }, ['文字1v2']),
+    el('ul', { 'style': 'color: red;' }, [
+        el('li', { 'style': 'font-size:18px;'}, ['第234t个li标签']),
+        el('li', { 'style': 'font-size:38px;'}, ['第sdf2个li标签']),
+    ]),
     el('p', { 'style': 'color: red;' }, ['文字2v2']),
-    el('input', { 'value': 'fuck'}, []),
+    // TODO: 如果newChildren.length > oldChildren.length
+    el('input', { 'value': 'fucksb'}, []),
 ]);
 
 // 由虚拟DOM生成真实DOM

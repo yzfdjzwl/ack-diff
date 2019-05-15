@@ -4,7 +4,7 @@ import {
     ATTRS,
     REPLACE,
     isString,
-} from './util'
+} from './util';
 
 
 /**
